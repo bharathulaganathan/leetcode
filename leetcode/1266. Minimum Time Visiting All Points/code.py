@@ -1,25 +1,18 @@
 from typing import List
 
+
 class Solution:
     def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
         time = 0
-        current = points.pop(0)
-        for point in points:
-            while True:
-                if current == point:
-                    break
-                if current[0] < point [0]:
-                    current[0] += 1
-                elif current[0] > point [0]:
-                    current[0] -= 1
-                if current[1] < point [1]:
-                    current[1] += 1
-                elif current[1] > point [1]:
-                    current[1] -= 1
-                time += 1
+        for i in range(len(points) - 1):
+            x_diff = abs(points[i][0] - points[i + 1][0])
+            y_diff = abs(points[i][1] - points[i + 1][1])
+            time += max(x_diff, y_diff)
         return time
-    
-points = [[1,1],[3,4],[-1,0]]
 
-sol = Solution()
-print(sol.minTimeToVisitAllPoints(points))
+
+test_cases = [[[1, 1], [3, 4], [-1, 0]], [[3, 2], [-2, 2]]]
+
+solution = Solution()
+for p in range(len(test_cases)):
+    print(f"Case {p + 1}: {solution.minTimeToVisitAllPoints(test_cases[p])}")
