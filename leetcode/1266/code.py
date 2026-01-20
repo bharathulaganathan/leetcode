@@ -11,7 +11,10 @@ class Solution:
         return time
 
 
-test_cases = [[[1, 1], [3, 4], [-1, 0]], [[3, 2], [-2, 2]]]
+test_cases = [
+    [[1, 1], [3, 4], [-1, 0]],
+    [[3, 2], [-2, 2]]
+    ]
 
 solution = Solution()
 for p in range(len(test_cases)):
