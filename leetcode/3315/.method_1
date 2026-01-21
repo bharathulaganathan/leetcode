@@ -1,0 +1,5 @@
+For each x in nums, we have to find the smallest ans such that ans|(ans+1) = x
+
+Flipping all the trailing 1's (1's before the first 0 from the right), except the leftmost digit, in the binary of the num will give us the smallest (ans+1) that can form x.
+Then to find the value that gives x when ans|(ans+1), we have to flip one of the 0's to 1 from the last so that we move from the smallest value.
+This works because when doing ans|(ans+1), the x that we get is simply flipping all trailing 0's after the left most 1. Since after flipping, we dont know which was the leftmost 1, we need to check for all options that could have been the leftmost 1.
