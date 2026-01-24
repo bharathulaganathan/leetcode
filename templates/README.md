@@ -1,5 +1,6 @@
 <!-- Problem Title -->
 # Problem Title
+
 <!-- Choose Difficulty -->
 ![Easy](https://img.shields.io/badge/Easy%20-1cbaba)
 ![Meduim](https://img.shields.io/badge/Medium%20-ffb700)
@@ -7,3 +8,19 @@
 
 <!-- Problem Statement -->
 Problem Statement
+
+<br/>
+
+<!-- Example -->
+**Example 1:**
+
+> **Input:**
+**Output:**
+**Explaination:**
+
+<br/>
+
+<!-- Example -->
+**Constraints:**
+
+*
