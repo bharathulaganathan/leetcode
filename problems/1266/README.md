@@ -36,7 +36,7 @@ You can move according to these rules:
 <!-- Example -->
 **Constraints:**
 
-* points.length == n
-* 1 <= n <= 100
-* points[i].length == 2
-* -1000 <= points[i][0], points[i][1] <= 1000
+* `points.length == n`
+* `1 <= n <= 100`
+* `points[i].length == 2`
+* `-1000 <= points[i][0], points[i][1] <= 1000`
