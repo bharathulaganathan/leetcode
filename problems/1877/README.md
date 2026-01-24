@@ -18,11 +18,9 @@ Return *the minimized **maximum pair sum** after optimally pairing up the elemen
 
 **Example 1:**
 
-> **Input:** nums = [3,5,2,3]
->
-> **Output:** 7
->
-> **Explaination:** The elements can be paired up into pairs (3,3) and (5,2).
+> **Input:** nums = [3,5,2,3]  
+**Output:** 7  
+**Explaination:** The elements can be paired up into pairs (3,3) and (5,2).  
 The maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.
 
 **Example 1:**
