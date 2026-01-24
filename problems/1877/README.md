@@ -27,12 +27,10 @@ The maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.
 
 **Example 1:**
 
-> **Input:** nums = [3,5,4,2,4,6]
->
-> **Output:** 8
->
+> **Input:** nums = [3,5,4,2,4,6]  
+> **Output:** 8  
 > **Explaination:** The elements can be paired up into pairs (3,5), (4,4), and (6,2).
-The maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.
+The maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.  
 
 <br/>
 
