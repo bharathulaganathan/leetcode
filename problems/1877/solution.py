@@ -3,8 +3,15 @@ import os
 import json
 
 class Solution:
-    # TODO
-    pass
+    def minPairSum(self, nums: List[int]) -> int:
+        nums.sort()
+        min_max = 0
+        for i in range(int(len(nums)/2)):
+            sum = nums[i] + nums[-(i+1)]
+            if sum > min_max:
+                min_max = sum
+        return min_max
+
 
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.json")) as file:
     testcases = json.load(file)
@@ -12,8 +19,7 @@ with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.js
 solution = Solution()
 failed = False
 for c, case in enumerate(testcases):
-    # TODO
-    sol = solution.CLASS_FUNCTION(case["input"])
+    sol = solution.minPairSum(case["input"])
     exp = case["output"]
     if sol != exp:
         failed = True
