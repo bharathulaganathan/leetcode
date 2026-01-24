@@ -14,11 +14,10 @@ Problem Statement
 <!-- Example -->
 **Example 1:**
 
-> **Input:**
->
-> **Output:**
->
-> **Explaination:**
+<!-- Each line end with 2 spaces -->
+> **Input:**  
+> **Output:**  
+> **Explaination:**  
 
 <br/>
 
