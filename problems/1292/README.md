@@ -8,7 +8,7 @@ Given a `m x n` matrix `mat` and an integer `threshold`, return *the maximum sid
 
 **Example 1:**
 
-[image](extras/e1.png)
+![](extras/e1.png)
 
 > **Input:** mat = \[[1,1,3,2,4,3,2],[1,1,3,2,4,3,2],[1,1,3,2,4,3,2]], threshold = 4  
 > **Output:** 2  
