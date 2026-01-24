@@ -1,5 +1,5 @@
 <!-- Problem Title -->
-# Problem Title
+# [Problem Title](Problem URL)
 
 <!-- Choose Difficulty -->
 ![Easy](https://img.shields.io/badge/Easy%20-1cbaba)
