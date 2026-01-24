@@ -15,8 +15,8 @@ Problem Statement
 **Example 1:**
 
 > **Input:**
-**Output:**
-**Explaination:**
+> **Output:**
+> **Explaination:**
 
 <br/>
 
