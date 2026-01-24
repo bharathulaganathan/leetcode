@@ -21,7 +21,6 @@ Given a `m x n` matrix `mat` and an integer `threshold`, return *the maximum sid
 
 <br/>
 
-<!-- Example -->
 **Constraints:**
 
 * `m == mat.length`

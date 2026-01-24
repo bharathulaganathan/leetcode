@@ -33,7 +33,6 @@ You can move according to these rules:
 
 <br/>
 
-<!-- Example -->
 **Constraints:**
 
 * `points.length == n`
