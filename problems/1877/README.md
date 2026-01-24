@@ -9,7 +9,6 @@ The **pair sum** of a pair `(a,b)` is equal to `a + b`. The **maximum pair sum**
 Given an array `nums` of **even** length `n`, pair up the elements of `nums` into `n / 2` pairs such that:
 
 * Each element of `nums` is in **exactly one** pair, and
-
 * The **maximum pair sum** is **minimized**.
 
 Return *the minimized **maximum pair sum** after optimally pairing up the elements*.
@@ -19,16 +18,16 @@ Return *the minimized **maximum pair sum** after optimally pairing up the elemen
 **Example 1:**
 
 > **Input:** nums = [3,5,2,3]  
-**Output:** 7  
-**Explaination:** The elements can be paired up into pairs (3,3) and (5,2).  
-The maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.  
+> **Output:** 7  
+> **Explaination:** The elements can be paired up into pairs (3,3) and (5,2).  
+> The maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.  
 
 **Example 1:**
 
 > **Input:** nums = [3,5,4,2,4,6]  
-**Output:** 8  
-**Explaination:** The elements can be paired up into pairs (3,5), (4,4), and (6,2).  
-The maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.  
+> **Output:** 8  
+> **Explaination:** The elements can be paired up into pairs (3,5), (4,4), and (6,2).  
+> The maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.  
 
 <br/>
 
