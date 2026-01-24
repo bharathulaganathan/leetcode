@@ -20,7 +20,7 @@ points[i].length == 2
 
 **Example 1:**
 
-[](extras/1626_example_1.png)
+[image](extras/1626_example_1.png)
 
 > **Input:** points = \[[1,1],[3,4],[-1,0]]  
 > **Output:** 7  
