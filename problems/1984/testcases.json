@@ -1,4 +1,23 @@
 [
-    {"input": , "output": },
-    {"input": , "output": }
+  {
+    "input": {
+      "nums": [
+        90
+      ],
+      "k": 1
+    },
+    "output": 0
+  },
+  {
+    "input": {
+      "nums": [
+        9,
+        4,
+        1,
+        7
+      ],
+      "k": 2
+    },
+    "output": 2
+  }
 ]

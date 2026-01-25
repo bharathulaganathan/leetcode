@@ -3,8 +3,14 @@ import os
 import json
 
 class Solution:
-    # TODO
-    pass
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+        nums.sort(reverse=True)
+        min_diff = nums[0] - nums[-1]
+        for i in range(len(nums)-k+1):
+            diff = nums[i] - nums[i+k-1]
+            if diff < min_diff:
+                min_diff = diff
+        return min_diff
 
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.json")) as file:
     testcases = json.load(file)
@@ -12,8 +18,7 @@ with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.js
 solution = Solution()
 failed = False
 for c, case in enumerate(testcases):
-    # TODO
-    sol = solution.CLASS_FUNCTION(case["input"])
+    sol = solution.minimumDifference(case["input"]["nums"], case["input"]["k"])
     exp = case["output"]
     if sol != exp:
         failed = True
