@@ -25,9 +25,9 @@ class Solution:
         return opts
 
 
-testcases = [[5, 2, 3, 1], [1, 2, 2]]
+testcases = [[5, 2, 3, 1], [1, 2, 2], [8,1,6,2,7,3], [100001,-100000,1,0]]
 
-expected = [2, 0]
+expected = [2, 0, 3, 3]
 
 solution = Solution()
 failed = False
