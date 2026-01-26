@@ -1,17 +1,15 @@
-<!-- Problem Title -->
-# [Problem Title](Problem URL)
+# [PROBLEM_TITLE](PROBLEM_URL)
 
-<!-- Choose Difficulty -->
+<!-- CHOOSE_DIFFICULTY -->
 ![Easy](https://img.shields.io/badge/Easy%20-1cbaba)
 ![Meduim](https://img.shields.io/badge/Medium%20-ffb700)
 ![Hard](https://img.shields.io/badge/Hard%20-f63737)
 
-<!-- Problem Statement -->
-Problem Statement
+PROBLEM_STATEMENT
 
 <br/>
 
-<!-- Example -->
+<!-- Create copies for more example -->
 **Example 1:**
 
 <!-- Each line end with 2 spaces -->
@@ -24,4 +22,5 @@ Problem Statement
 <!-- Example -->
 **Constraints:**
 
+<!-- Add constraints -->
 *
