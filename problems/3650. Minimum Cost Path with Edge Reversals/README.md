@@ -4,7 +4,7 @@
 
 You are given a directed, weighted graph with `n` nodes labeled from 0 to `n - 1`, and an array `edges` where `edges[i] = [uᵢ, vᵢ, wᵢ]` represents a directed edge from node `uᵢ` to node `vᵢ` with cost `wᵢ`.
 
-Each node `uᵢ` has a switch that can be used **at most once**: when you arrive at uᵢ and have not yet used its switch, you may activate it on one of its incoming edges `vi → ui` reverse that edge to `uᵢ → vᵢ` and **immediately** traverse it.
+Each node `uᵢ` has a switch that can be used **at most once**: when you arrive at uᵢ and have not yet used its switch, you may activate it on one of its incoming edges `vᵢ → uᵢ` reverse that edge to `uᵢ → vᵢ` and **immediately** traverse it.
 
 The reversal is only valid for that single move, and using a reversed edge costs `2 * wᵢ`.
 
