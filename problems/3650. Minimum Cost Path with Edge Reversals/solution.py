@@ -3,8 +3,7 @@ import os
 import json
 
 class Solution:
-    # TODO
-    pass
+    def minCost(self, n: int, edges: List[List[int]]) -> int:
 
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.json")) as file:
     testcases = json.load(file)
@@ -12,8 +11,7 @@ with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.js
 solution = Solution()
 failed = False
 for c, case in enumerate(testcases):
-    # TODO
-    sol = solution.CLASS_FUNCTION(case["input"])
+    sol = solution.minCost(case["input"]["n"], case["input"]["edges"])
     exp = case["output"]
     if sol != exp:
         failed = True
