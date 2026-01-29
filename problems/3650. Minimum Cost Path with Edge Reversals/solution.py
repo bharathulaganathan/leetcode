@@ -16,8 +16,6 @@ class Solution:
         max_w[0] = 0
         while len(heap) > 0:
             w, node = heapq.heappop(heap)
-            if w > max_w[node]:
-                continue
             if node == n - 1:
                 return w
             done.add(node)
