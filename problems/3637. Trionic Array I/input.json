@@ -1,0 +1,7 @@
+{
+    "method": "",
+    "testcases": [
+        {"input": {"nums": [1,3,5,4,2,6]}, "output": true},
+        {"input": {"nums": [2,1,3]}, "output": false}
+    ]
+}
