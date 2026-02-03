@@ -27,7 +27,7 @@ Return `true` if `nums` is trionic, otherwise return `false`.
 
 > **Input:** nums = [2,1,3]  
 > **Output:** false  
-> **Explaination:** 
+> **Explaination:**  
 > There is no way to pick `p` and `q` to form the required three segments.  
 
 <br/>
