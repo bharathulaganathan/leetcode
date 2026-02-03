@@ -20,10 +20,12 @@ def main():
 
     problems.sort(key=lambda x: x[0], reverse=True)
 
+    print("Recently modified problems:")
     for p in range(min(3, len(problems))):
         print(problems[p][1])
 
     choice = choose_problem(problems)
+    print(choice)
 
     problem_dir = problems_dir / choice
 
@@ -51,7 +53,7 @@ def main():
 def choose_problem(problems):
     while True:
         try:
-            problem_number = input("Give a problem number or 'Enter' for the latest problem: ")
+            problem_number = input("Give a problem number or press 'Enter' for the latest problem: ")
             if problem_number == "":
                 return problems[0][1]
             problem_number = int(problem_number)
@@ -59,9 +61,9 @@ def choose_problem(problems):
             for problem in problems:
                 if int(problem[1].split(".")[0]) == problem_number:
                     return problem[1]
-            print("Wrong problem number.", end=' ')
+            print("No solution.py exists for the given problem number.")
         except ValueError:
-            print("Wrong problem number.", end=' ')
+            print("Problem number should be an integer.")
         except KeyboardInterrupt:
             sys.exit("")
 
@@ -115,10 +117,7 @@ def run_test(test_solution, solution_method, testcase, i):
             result = method(input)
 
         if not result == expected:
-            print(f"Testcase {i} Failed!")
-            print(f"Expected: {expected}")
-            print(f"But got:  {result}")
-            sys.exit("")
+            sys.exit(f"Testcase {i} Failed!\nExpected : {expected}\nGot      : {result}")
 
         return
 
