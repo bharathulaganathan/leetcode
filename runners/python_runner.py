@@ -41,11 +41,13 @@ def main():
         input_method = inputs.get("method")
         testcases = inputs.get("testcases")
 
-    solution_method = fine_solution_method(solution_class, input_method)
+    solution_method = find_solution_method(solution_class, input_method)
 
-    for i, testcase in enumerate(testcases, start=1):
+    testcases.sort(key=lambda t: t["case"])
+    for testcase in testcases:
         test_solution = solution_class()
-        run_test(test_solution, solution_method, testcase, i)
+        case = testcase.pop("case")
+        run_test(test_solution, solution_method, testcase, case)
 
     print("All testcases Passed!")
 
@@ -84,7 +86,7 @@ def find_solution_class(module):
             return attr
     sys.exit("No Solution class found in solution.py")
 
-def fine_solution_method(solution_class, input_method):
+def find_solution_method(solution_class, input_method):
     methods = []
     for method in dir(solution_class):
         if not method.startswith("_") and callable(getattr(solution_class, method)):
@@ -95,7 +97,7 @@ def fine_solution_method(solution_class, input_method):
         return methods[0]
     sys.exit("No suitable method found in Solution class")
 
-def run_test(test_solution, solution_method, testcase, i):
+def run_test(test_solution, solution_method, testcase, case):
     try:
         if "input" in testcase:
             inputs = testcase["input"]
@@ -103,7 +105,7 @@ def run_test(test_solution, solution_method, testcase, i):
             inputs = testcase["inputs"]
         else:
             inputs = {k: v for k, v in testcase.items()
-            if k not in ["expected", "output", "method"]}
+            if k not in ["expected", "output", "method", "case"]}
 
         expected = testcase.get("expected") or testcase.get("output")
 
@@ -117,12 +119,12 @@ def run_test(test_solution, solution_method, testcase, i):
             result = method(input)
 
         if not result == expected:
-            sys.exit(f"Testcase {i} Failed!\nExpected : {expected}\nGot      : {result}")
+            sys.exit(f"Testcase {case} Failed!\nExpected : {expected}\nGot      : {result}")
 
         return
 
     except Exception as e:
-        print(f"Testcase {i} ERROR!")
+        print(f"Testcase {case} ERROR!")
         print(f"Error: {str(e)}")
         sys.exit("")
 
