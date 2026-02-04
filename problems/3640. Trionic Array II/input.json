@@ -1,0 +1,12 @@
+{
+    "method": "maxSumTrionic",
+    "testcases": [
+        {"case": 1, "input": {"nums": [0,-2,-1,-3,0,2,-1]}, "output": -4},
+        {"case": 2, "input": {"nums": [1,4,2,7]}, "output": 14},
+        {"case": 388, "input": {"nums": [1,4,2,2,3,1,2]}, "output": 8},
+        {"case": 116, "input": {"nums": [2,993,-791,-635,-569]}, "output": -431},
+        {"case": 409, "input": {"nums": [-533,224,-324,251,231,479]}, "output": 637},
+        {"case": 69, "input": {"nums": [395,731,-892,-619,-238,634]}, "output": 11},
+        {"case": 129, "input": {"nums": [1,2,2,3,2,3]}, "output": 10}
+    ]
+}
