@@ -1,7 +1,7 @@
 {
     "method": "",
     "testcases": [
-        {"input": {}, "output": },
-        {"input": {}, "output": }
+        {"case": , "input": {}, "output": },
+        {"case": , "input": {}, "output": }
     ]
 }
