@@ -1,0 +1,7 @@
+{
+    "method": "",
+    "testcases": [
+        {"case": 1, "input": {"s": "aababbab"}, "expected": 2},
+        {"case": 2, "input": {"s": "bbaaaaabb"}, "expected": 2}
+    ]
+}
