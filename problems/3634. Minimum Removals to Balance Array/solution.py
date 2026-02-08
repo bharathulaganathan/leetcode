@@ -22,4 +22,3 @@ class Solution:
                         return rem + 1
                 return max_rem
             rem += 1
-

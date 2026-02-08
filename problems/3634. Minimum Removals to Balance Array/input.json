@@ -1,4 +1,6 @@
 {
+    "call": "class",
+    "name": "Solution",
     "method": "minRemoval",
     "testcases": [
         {"case": 1, "input": {"nums": [2,1,5], "k": 2}, "output": 1},
