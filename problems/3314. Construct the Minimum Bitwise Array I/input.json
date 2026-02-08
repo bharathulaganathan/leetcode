@@ -1,0 +1,9 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "minBitwiseArray",
+    "testcases": [
+        {"case": 0.1, "input": {"nums": [2, 3, 5, 7]}, "expected": [-1, 1, 4, 3]},
+        {"case": 0.2, "input": {"nums": [11, 13, 31]}, "expected": [9, 12, 15]}
+    ]
+}
