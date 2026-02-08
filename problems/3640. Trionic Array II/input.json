@@ -1,4 +1,6 @@
 {
+    "call": "class",
+    "name": "Solution",
     "method": "maxSumTrionic",
     "testcases": [
         {"case": 1, "input": {"nums": [0,-2,-1,-3,0,2,-1]}, "output": -4},

@@ -52,5 +52,3 @@ class Solution:
                         return (float('-inf'), last_dec)
                     else:
                         return (max_sum, last_dec)
-
-
