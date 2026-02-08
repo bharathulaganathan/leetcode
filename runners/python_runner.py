@@ -106,8 +106,10 @@ def run_test(test_solution, solution_method, testcase, case):
         else:
             inputs = {k: v for k, v in testcase.items()
             if k not in ["expected", "output", "method", "case"]}
-
-        expected = testcase.get("expected") or testcase.get("output")
+            
+        expected = testcase.get("expected")
+        if expected is None:
+            expected = testcase.get("output")
 
         method = getattr(test_solution, solution_method)
 
