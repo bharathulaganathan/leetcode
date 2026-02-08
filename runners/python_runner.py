@@ -22,32 +22,44 @@ def main():
 
     print("Recently modified problems:")
     for p in range(min(3, len(problems))):
-        print(problems[p][1])
+        print(f" > {problems[p][1]}")
 
     choice = choose_problem(problems)
-    print(choice)
+    print(f" > {choice}")
 
     problem_dir = problems_dir / choice
-
-    solution_module = find_solution_module(problem_dir)
-
-    solution_class = find_solution_class(solution_module)
 
     if not (problem_dir / "input.json").exists():
         sys.exit("No input.json in the problem directory")
 
     with open(problem_dir / "input.json") as input_file:
         inputs = json.load(input_file)
-        input_method = inputs.get("method")
+        callable = inputs.get("call", "class")
+        call_name = inputs.get("name", "Solution")
+        if callable == "class":
+            problem_method = inputs.get("method")
+        else:
+            problem_method = None
         testcases = inputs.get("testcases")
 
-    solution_method = find_solution_method(solution_class, input_method)
+    req_module = find_module(problem_dir)
+
+    req_call = find_call(req_module, call_name)
+
+    req_method = None
+    if callable == "class":
+        req_method = find_method(req_call, problem_method)
+    elif callable == "function":
+        req_method = None
 
     testcases.sort(key=lambda t: t["case"])
     for testcase in testcases:
-        test_solution = solution_class()
+        if callable == "class":
+            test_solution = req_call()
+        elif callable == "function":
+            test_solution = req_call
         case = testcase.pop("case")
-        run_test(test_solution, solution_method, testcase, case)
+        run_test(test_solution, callable, req_method, testcase, case)
 
     print("All testcases Passed!")
 
@@ -69,7 +81,7 @@ def choose_problem(problems):
         except KeyboardInterrupt:
             sys.exit("")
 
-def find_solution_module(problem_dir):
+def find_module(problem_dir):
     spec = importlib.util.spec_from_file_location("solution", problem_dir / "solution.py")
     if spec is None or spec.loader is None:
         sys.exit("Could not load module from solution.py")
@@ -77,58 +89,65 @@ def find_solution_module(problem_dir):
     spec.loader.exec_module(module)
     return module
 
-def find_solution_class(module):
-    if hasattr(module, "Solution"):
-        return module.Solution
+def find_call(module, name):
+    for attr_name in dir(module):
+        if attr_name == name:
+            attr = getattr(module, name)
+            if callable(attr):
+                return attr
+    if hasattr(module, name):
+        return getattr(module, name)
     for attr_name in dir(module):
         attr = getattr(module, attr_name)
         if isinstance(attr, type) and not attr_name.startswith('_'):
             return attr
-    sys.exit("No Solution class found in solution.py")
+    sys.exit("No callable found in solution.py")
 
-def find_solution_method(solution_class, input_method):
+def find_method(req_call, problem_method):
     methods = []
-    for method in dir(solution_class):
-        if not method.startswith("_") and callable(getattr(solution_class, method)):
-            if method == input_method:
+    for method in dir(req_call):
+        if not method.startswith("_") and callable(getattr(req_call, method)):
+            if method == problem_method:
                 return method
             methods.append(method)
     if methods:
         return methods[0]
     sys.exit("No suitable method found in Solution class")
 
-def run_test(test_solution, solution_method, testcase, case):
+def run_test(test, callable, class_method, testcase, case_num):
     try:
         if "input" in testcase:
-            inputs = testcase["input"]
+            input = testcase["input"]
         elif "inputs" in testcase:
-            inputs = testcase["inputs"]
+            input = testcase["inputs"]
         else:
-            inputs = {k: v for k, v in testcase.items()
+            input = {k: v for k, v in testcase.items()
             if k not in ["expected", "output", "method", "case"]}
             
         expected = testcase.get("expected")
         if expected is None:
             expected = testcase.get("output")
 
-        method = getattr(test_solution, solution_method)
-
-        if isinstance(inputs, dict):
-            result = method(**inputs)
-        elif isinstance(inputs, list):
-            result = method(*inputs)
+        if callable == "class":
+            method = getattr(test, class_method)
+            if isinstance(input, dict):
+                result = method(**input)
+            elif isinstance(input, list):
+                result = method(*input)
+            else:
+                result = method(input)
+        elif callable == "function":
+            result = test(input)
         else:
-            result = method(input)
+            sys.exit("Callable neither class nor function")
 
         if not result == expected:
-            sys.exit(f"Testcase {case} Failed!\nExpected : {expected}\nGot      : {result}")
+            sys.exit(f"Testcase {case_num} Failed!\nExpected : {expected}\nGot      : {result}")
 
         return
 
     except Exception as e:
-        print(f"Testcase {case} ERROR!")
-        print(f"Error: {str(e)}")
-        sys.exit("")
+        sys.exit(f"Testcase {case_num} ERROR!\nError    : {str(e)}")
 
 if "__main__" == __name__:
     main()
