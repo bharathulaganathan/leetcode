@@ -1,6 +1,3 @@
-from typing import List
-
-
 class Solution:
     def minimumPairRemoval(self, nums: List[int]) -> int:
         opts = 0
@@ -23,20 +20,3 @@ class Solution:
             nums[min_index] = min_sum
             opts += 1
         return opts
-
-
-testcases = [[5, 2, 3, 1], [1, 2, 2], [8,1,6,2,7,3], [100001,-100000,1,0]]
-
-expected = [2, 0, 3, 3]
-
-solution = Solution()
-failed = False
-for c, case in enumerate(testcases):
-    sol = solution.minimumPairRemoval(case)
-    exp = expected[c]
-    if sol != exp:
-        failed = True
-        print(f"Case {c + 1} failed!")
-        print(f"Expected {exp} but got {sol}")
-if not failed:
-    print(f"All {len(testcases)} testcases passed!")
