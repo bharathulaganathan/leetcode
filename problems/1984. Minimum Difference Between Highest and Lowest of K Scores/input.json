@@ -1,0 +1,9 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "minimumDifference",
+    "testcases": [
+        {"case": 0.1, "input": {"nums": [90], "k": 1}, "expected": 0},
+        {"case": 0.2, "input": {"nums": [9, 4, 1, 7], "k": 2}, "expected": 2}
+    ]
+}
