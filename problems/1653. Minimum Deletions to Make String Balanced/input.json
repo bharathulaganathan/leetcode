@@ -2,6 +2,8 @@
     "method": "",
     "testcases": [
         {"case": 1, "input": {"s": "aababbab"}, "expected": 2},
-        {"case": 2, "input": {"s": "bbaaaaabb"}, "expected": 2}
+        {"case": 2, "input": {"s": "bbaaaaabb"}, "expected": 2},
+        {"case": 148, "input": {"s": "a"}, "expected": 0},
+        {"case": 150, "input": {"s": "aaaaaaaaaaaaaa"}, "expected": 0}
     ]
 }
