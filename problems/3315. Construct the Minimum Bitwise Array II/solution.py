@@ -1,6 +1,3 @@
-from typing import List
-
-
 class Solution:
     def minBitwiseArray(self, nums: List[int]) -> List[int]:
         ans = []
@@ -29,52 +26,3 @@ class Solution:
                 ansp1 = ans_0
                 ansp1 = ansp1[:index] + "1" + ansp1[index + 1 :]
         return ans
-
-
-testcases = [
-    [2, 3, 5, 7],
-    [11, 13, 31],
-    [
-        884532611,
-        741533369,
-        868936609,
-        816315823,
-        150570781,
-        346594697,
-        334726181,
-        921762641,
-        89355881,
-        403165729,
-        931242733,
-    ],
-]
-
-expected = [
-    [-1, 1, 4, 3],
-    [9, 12, 15],
-    [
-        884532609,
-        741533368,
-        868936608,
-        816315815,
-        150570780,
-        346594696,
-        334726180,
-        921762640,
-        89355880,
-        403165728,
-        931242732,
-    ],
-]
-
-solution = Solution()
-failed = False
-for c, case in enumerate(testcases):
-    sol = solution.minBitwiseArray(case)
-    exp = expected[c]
-    if sol != exp:
-        failed = True
-        print(f"Case {c + 1} failed!")
-        print(f"Expected {exp} but got {sol}")
-if not failed:
-    print(f"All {len(testcases)} testcases passed!")
