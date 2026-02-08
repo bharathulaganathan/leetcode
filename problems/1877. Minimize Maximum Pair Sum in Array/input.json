@@ -1,0 +1,9 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "minPairSum",
+    "testcases": [
+        {"case": 0.1, "input": {"nums": [3,5,2,3]}, "expected": 7},
+        {"case": 0.2, "input": {"nums": [3,5,4,2,4,6]}, "expected": 8}
+    ]
+}
