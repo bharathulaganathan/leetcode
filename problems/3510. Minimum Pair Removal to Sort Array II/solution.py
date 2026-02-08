@@ -1,15 +1,4 @@
-from typing import List
-import os
-import json
-
 class Solution:
-    class Pair:
-        def __init__(self, sum, p, i, j, n):
-            self.sum = sum
-            self.p = p
-            self.i = i
-            self.j = j
-            self.n = n
     def minimumPairRemoval(self, nums: List[int]) -> int:
         dec = 0
         pair_arr = []
@@ -72,19 +61,10 @@ class Solution:
                 pair_arr.append(self.Pair(pair.sum + nums[pair.n], pair.p, pair.i, pair.n, None))
             opts += 1
         return opts
-
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "testcases.json")) as file:
-    testcases = json.load(file)
-
-solution = Solution()
-failed = False
-for c, case in enumerate(testcases):
-    sol = solution.minimumPairRemoval(case["input"])
-    exp = case["output"]
-    if sol != exp:
-        failed = True
-        print(f"Case {c + 1} failed!")
-        print(f"Expected {exp} but got {sol}")
-if not failed:
-    print(f"All {len(testcases)} testcases passed!")
-
+    class Pair:
+        def __init__(self, sum, p, i, j, n):
+            self.sum = sum
+            self.p = p
+            self.i = i
+            self.j = j
+            self.n = n
