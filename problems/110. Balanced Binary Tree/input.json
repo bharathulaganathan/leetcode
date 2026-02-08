@@ -1,7 +1,15 @@
 {
-    "method": "",
+    "call": "function",
+    "name": "run",
+    "method": "isBalanced",
     "testcases": [
-        {"case": , "input": {}, "expected": },
-        {"case": , "input": {}, "expected": }
+        {"case": 0.1, "input": {"root": [3,9,20,null,null,15,7]}, "expected": true},
+        {"case": 0.2, "input": {"root": [1,2,2,3,3,null,null,4,4]}, "expected": false},
+        {"case": 0.3, "input": {"root": []}, "expected": true},
+        {"case": 3, "input": {"root": [1]}, "expected": true},
+        {"case": 4, "input": {"root": [1,2]}, "expected": true},
+        {"case": 5, "input": {"root": [1,null,2]}, "expected": true},
+        {"case": 35, "input": {"root": [1,null,2,null,3]}, "expected": false},
+        {"case": 116, "input": {"root": [1,2,2,3,null,null,3,4,null,null,4]}, "expected": false}
     ]
 }
