@@ -6,27 +6,22 @@ class TreeNode:
 
 class Solution:
     def balanceBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        tree = self.deconstruct(root)
-        tree.sort()
-        root_node = self.construct_binary(tree)
-        return root_node
+        self.tree = []
+        self.deconstruct(root)
+        return self.construct_binary(self.tree)
 
     def deconstruct(self, root):
-        current = [root]
-        nodes = []
-        while current:
-            node = current.pop(0)
-            if node == None:
-                continue
-            nodes.append(node.val)
-            current.append(node.left)
-            current.append(node.right)
-        return nodes
+        if root == None:
+            return
+        self.deconstruct(root.left)
+        self.tree.append(root.val)
+        self.deconstruct(root.right)
+        return
 
     def construct_binary(self, tree):
         if not tree:
             return None
-        mid = int(len(tree)/2)
+        mid = len(tree) // 2
         node = TreeNode(tree[mid]) or None
         node.left = self.construct_binary(tree[:mid]) or None
         node.right = self.construct_binary(tree[mid+1:]) or None
