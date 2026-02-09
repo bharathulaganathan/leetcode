@@ -13,25 +13,19 @@ class TreeConstruct:
         first_node = TreeNode(val=first_val)
         current = [first_node]
         while current and root:
-            next = []
-            while current and root:
-                node = current.pop(0)
-                child_left_val = root.pop(0)
-                if root:
-                    child_right_val = root.pop(0)
-                else:
-                    child_right_val = None
-                if child_left_val is None and child_right_val is None:
-                    continue
-                if child_left_val is not None:
-                    child_left = TreeNode(val=child_left_val)
-                    node.left = child_left
-                    next.append(child_left)
-                if child_right_val is not None:
-                    child_right = TreeNode(val=child_right_val)
-                    node.right = child_right
-                    next.append(child_right)
-            current = [n for n in next]
+            node = current.pop(0)
+            left = root.pop(0)
+            if left is not None:
+                left = TreeNode(val=left)
+                current.append(left)
+            node.left = left
+            right = None
+            if root:
+                right = root.pop(0)
+            if right is not None:
+                right = TreeNode(val=right)
+                current.append(right)
+            node.right = right
         return first_node
 
 class Solution:
