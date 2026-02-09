@@ -1,9 +1,8 @@
 {
-    "call": "",
-    "name": "",
+    "call": "function",
+    "name": "run",
     "method": "",
     "testcases": [
-        {"case": , "input": {}, "expected": },
-        {"case": , "input": {}, "expected": }
+        {"case": 0.1, "input": [["Bank","withdraw","transfer","deposit","transfer","withdraw"], [[[10,100,20,50,30]],[3,10],[5,1,20],[5,20],[3,4,15],[10,50]]], "expected": [null, true, true, true, false, false]}
     ]
 }
