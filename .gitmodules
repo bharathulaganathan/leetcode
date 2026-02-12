@@ -1,0 +1,3 @@
+[submodule "creator/query"]
+	path = creator/query
+	url = https://github.com/bharathulaganathan/LeetCode-Query.git
