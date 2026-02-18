@@ -1,0 +1,9 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "reverseBits",
+    "testcases": [
+        {"case": 0.1, "input": {"n": 43261596}, "expected": 964176192},
+        {"case": 0.2, "input": {"n": 2147483644}, "expected": 1073741822}
+    ]
+}
