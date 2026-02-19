@@ -12,4 +12,3 @@ class Solution:
                 n_count = 0
             n_count += 1
         return ans + min(p_count, n_count)
-        
