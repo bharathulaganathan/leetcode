@@ -2,6 +2,7 @@
     "call": "",
     "name": "",
     "method": "",
+    "order": "",
     "testcases": [
         {"case": , "input": {}, "expected": },
         {"case": , "input": {}, "expected": }
