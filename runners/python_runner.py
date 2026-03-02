@@ -10,13 +10,13 @@ def main():
     problems = []
     for problem in problems_dir.iterdir():
         if problem.is_dir():
-            solution = problem / "solution.py"
+            solution = problem / "solution_Python3.py"
             if solution.exists():
                 mod_time = solution.stat().st_mtime
                 problems.append((mod_time, problem.name))
 
     if not problems:
-        sys.exit('No problem available in "problems" directory with solution.py')
+        sys.exit('No problem available in "problems" directory with solution_Python3.py')
 
     problems.sort(key=lambda x: x[0], reverse=True)
 
@@ -75,16 +75,16 @@ def choose_problem(problems):
             for problem in problems:
                 if int(problem[1].split(".")[0]) == problem_number:
                     return problem[1]
-            print("No solution.py exists for the given problem number.")
+            print("No solution_Python3.py exists for the given problem number.")
         except ValueError:
             print("Problem number should be an integer.")
         except KeyboardInterrupt:
             sys.exit("")
 
 def find_module(problem_dir):
-    spec = importlib.util.spec_from_file_location("solution", problem_dir / "solution.py")
+    spec = importlib.util.spec_from_file_location("solution", problem_dir / "solution_Python3.py")
     if spec is None or spec.loader is None:
-        sys.exit("Could not load module from solution.py")
+        sys.exit("Could not load module from solution_Python3.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -101,7 +101,7 @@ def find_call(module, name):
         attr = getattr(module, attr_name)
         if isinstance(attr, type) and not attr_name.startswith('_'):
             return attr
-    sys.exit("No callable found in solution.py")
+    sys.exit("No callable found in solution_Python3.py")
 
 def find_method(req_call, problem_method):
     methods = []
