@@ -1,0 +1,11 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "minSwaps",
+    "order": "",
+    "testcases": [
+        {"case": 1, "input": {"grid": [[0,0,1],[1,1,0],[1,0,0]]}, "expected": 3},
+        {"case": 2, "input": {"grid": [[0,1,1,0],[0,1,1,0],[0,1,1,0],[0,1,1,0]]}, "expected": -1},
+        {"case": 3, "input": {"grid": [[1,0,0],[1,1,0],[1,1,1]]}, "expected": 0}
+    ]
+}
