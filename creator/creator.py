@@ -122,7 +122,7 @@ def leetcode_search():
 def result_select(result):
     title_slug = ""
     search_problems = {}
-    problem_count = max(5, len(result["questions"]))
+    problem_count = min(5, len(result["questions"]))
     print(f"Top {problem_count} results:")
     for p in range(problem_count):
         p_num = result["questions"][p]["questionFrontendId"]
