@@ -164,7 +164,7 @@ def create_solution(problem_dir, question):
     langs = {'cpp': {'id': 0, 'name': 'C++', 'extension': 'cpp'}, 'java': {'id': 1, 'name': 'Java', 'extension': 'java'}, 'python': {'id': 2, 'name': 'Python', 'extension': 'py'}, 'mysql': {'id': 3, 'name': 'MySQL', 'extension': 'sql'}, 'c': {'id': 4, 'name': 'C', 'extension': 'c'}, 'csharp': {'id': 5, 'name': 'C#', 'extension': 'cs'}, 'javascript': {'id': 6, 'name': 'JavaScript', 'extension': 'js'}, 'ruby': {'id': 7, 'name': 'Ruby', 'extension': 'rb'}, 'bash': {'id': 8, 'name': 'Bash', 'extension': 'sh'}, 'swift': {'id': 9, 'name': 'Swift', 'extension': 'swift'}, 'golang': {'id': 10, 'name': 'Go', 'extension': 'go'}, 'python3': {'id': 11, 'name': 'Python3', 'extension': 'py'}, 'scala': {'id': 12, 'name': 'Scala', 'extension': 'scala'}, 'kotlin': {'id': 13, 'name': 'Kotlin', 'extension': 'kt'}, 'mssql': {'id': 14, 'name': 'MS SQL Server', 'extension': 'sql'}, 'oraclesql': {'id': 15, 'name': 'Oracle', 'extension': 'sql'}, 'rust': {'id': 18, 'name': 'Rust', 'extension': 'rs'}, 'php': {'id': 19, 'name': 'PHP', 'extension': 'php'}, 'typescript': {'id': 20, 'name': 'TypeScript', 'extension': 'ts'}, 'racket': {'id': 21, 'name': 'Racket', 'extension': 'rkt'}, 'erlang': {'id': 22, 'name': 'Erlang', 'extension': 'erl'}, 'elixir': {'id': 23, 'name': 'Elixir', 'extension': 'ex'}, 'dart': {'id': 24, 'name': 'Dart', 'extension': 'dart'}, 'pythondata': {'id': 25, 'name': 'Pandas', 'extension': 'py'}, 'react': {'id': 26, 'name': 'React', 'extension': 'jsx'}, 'vanillajs': {'id': 27, 'name': 'Vanilla JS', 'extension': 'js'}, 'postgresql': {'id': 28, 'name': 'PostgreSQL', 'extension': 'sql'}, 'cangjie': {'id': 29, 'name': 'Cangjie', 'extension': 'cj'}}
     id_len = 1
     for lang in langs.keys():
-        id_len = max(id_len, len(str(langs[lang]["id"]))) + 1
+        id_len = max(id_len, len(str(langs[lang]["id"])) + 1)
     options = {}
     question["codeSnippets"].reverse()
     for snip in question["codeSnippets"]:
@@ -220,7 +220,7 @@ def create_input(problem_dir, question):
     if question["exampleTestcaseList"]:
         input_string += f'{" "*4}"testcases": [\n'
         for c, case in enumerate(question["exampleTestcaseList"], start=1):
-            input_string += f'{" "*8}{{"case": {c}, "input": '
+            input_string += f'{" "*8}{{"case": {c}, "expected": , "input": '
             if "params" in metadata:
                 input_string += "{"
                 case = case.split("\n")
@@ -238,7 +238,7 @@ def create_input(problem_dir, question):
                         input_string += "[" + str(line)[1:-1] + "]" + ", "
                     input_string = input_string[:-2]
                     input_string += "]"
-            input_string += ', "expected": },\n'
+            input_string += '},\n'
         input_string = input_string[:-2]
         input_string += f"\n{" "*4}]\n"
     input_string += "}"
