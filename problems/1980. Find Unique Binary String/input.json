@@ -1,0 +1,11 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "findDifferentBinaryString",
+    "order": "",
+    "testcases": [
+        {"case": 1, "expected": "00", "input": {"nums": ["01","10"]}},
+        {"case": 2, "expected": "10", "input": {"nums": ["00","01"]}},
+        {"case": 3, "expected": "000", "input": {"nums": ["111","011","001"]}}
+    ]
+}
