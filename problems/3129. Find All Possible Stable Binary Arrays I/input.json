@@ -1,0 +1,15 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "numberOfStableArrays",
+    "order": "",
+    "testcases": [
+        {"case": 1, "expected": 2, "input": {"zero": 1, "one": 1, "limit": 2}},
+        {"case": 2, "expected": 1, "input": {"zero": 1, "one": 2, "limit": 1}},
+        {"case": 3, "expected": 14, "input": {"zero": 3, "one": 3, "limit": 2}},
+        {"case": 516, "expected": 20058300, "input": {"zero": 14, "one": 13, "limit": 59}},
+        {"case": 523, "expected": 855954457, "input": {"zero": 19, "one": 15, "limit": 15}},
+        {"case": 598, "expected": 247943139, "input": {"zero": 20, "one": 15, "limit": 75}},
+        {"case": 669, "expected": 587893473, "input": {"zero": 200, "one": 200, "limit": 200}}
+    ]
+}
