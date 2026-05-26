@@ -1,0 +1,24 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "pyramidTransition",
+    "order": "",
+    "testcases": [
+        {
+            "case": 1,
+            "expected": true,
+            "input": {
+                "bottom": "BCD",
+                "allowed": ["BCC", "CDE", "CEA", "FFF"]
+            }
+        },
+        {
+            "case": 2,
+            "expected": false,
+            "input": {
+                "bottom": "AAAA",
+                "allowed": ["AAB", "AAC", "BCD", "BBE", "DEF"]
+            }
+        }
+    ]
+}
