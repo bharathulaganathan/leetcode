@@ -1,0 +1,11 @@
+{
+    "call": "class",
+    "name": "Solution",
+    "method": "minimumDistance",
+    "order": "",
+    "testcases": [
+        {"case": 1, "expected": 3, "input": {"word": "CAKE"}},
+        {"case": 2, "expected": 6, "input": {"word": "HAPPY"}},
+        {"case": 24, "expected": 7, "input": {"word": "YEAR"}}
+    ]
+}
